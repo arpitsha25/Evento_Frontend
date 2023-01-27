@@ -89,7 +89,7 @@ const Showevent = () => {
                 <>
                   <SwiperSlide className="sldimg">
                     <img
-                      src={`/getimage/${idevent?.eventdata[0]?.imagesID[index]}`}
+                      src={`https://eventobackend.onrender.com/getimage/${idevent?.eventdata[0]?.imagesID[index]}`}
                       alt="img"
                     />
                   </SwiperSlide>

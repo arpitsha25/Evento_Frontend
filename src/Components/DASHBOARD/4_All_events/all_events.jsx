@@ -45,7 +45,7 @@ const Allevents = () => {
                     <div className="allfeatureimg1">
                       <div className="allfeatureimg">
                         <img
-                          src={`/getimage/${img}`}
+                          src={`https://eventobackend.onrender.com/getimage/${img}`}
                           alt="img"
                           // loading="lazy"
                         />

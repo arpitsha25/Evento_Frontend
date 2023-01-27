@@ -16,7 +16,7 @@ const Eventcard = (props) => {
         {/* {console.log(props)} */}
         {/* {console.log(props.images)} */}
         {/* {console.log(ObjectID)} */}
-        <img src={`/getimage/${props.images}`} alt={props.carddata.eventitle} />
+        <img src={`https://eventobackend.onrender.com/getimage/${props.images}`} alt={props.carddata.eventitle} />
         <div className="overlay"></div>
         <div className="evdetails">
           <div className="evdetails2">

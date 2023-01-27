@@ -64,7 +64,7 @@ const Myevents = () => {
                       <div className="featureimg1">
                         <div className="featureimg">
                           <img
-                            src={`/getimage/${img}`}
+                            src={`https://eventobackend.onrender.com/getimage/${img}`}
                             alt="img"
                           />
                         </div>

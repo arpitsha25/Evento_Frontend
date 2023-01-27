@@ -1,1 +1,1 @@
-export const API = "https://eventobackend.onrender.com/"
+export const API = "https://eventobackend.onrender.com"

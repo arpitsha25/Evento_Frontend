@@ -2,7 +2,7 @@ import "./eventcard.css";
 import React from "react";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { ImLocation2 } from "react-icons/im";
-import { API } from "../../../../config";
+import { API } from "../../../config";
 // import { useSelector } from "react-redux";
 // import eventphoto from "../../../../assets/bg2.jpg";
 

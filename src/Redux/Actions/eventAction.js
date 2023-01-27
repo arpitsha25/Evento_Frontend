@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API } from "../../../config";
+import { API } from "../../config";
 export const hostEvent = createAsyncThunk(
   "/hostevent",
   async (formData, { rejectWithValue }) => {

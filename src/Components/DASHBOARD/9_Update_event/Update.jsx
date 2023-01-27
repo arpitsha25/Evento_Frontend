@@ -11,7 +11,7 @@ import Lottie from "lottie-react";
 import { useEffect } from "react";
 import Loader from "../../loader/loader";
 import { useNavigate } from "react-router-dom";
-
+import { API } from "../../../config.js"
 const Update = () => {
   const navigate = useNavigate()
   // const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const Update = () => {
 
   useEffect(() => {
     const fetchevdata = async () => {
-      const response = await fetch(`/getidevent/${uid}`);
+      const response = await fetch(`${API}/getidevent/${uid}`);
       const data = await response.json();
       setevdata(data);
     };
@@ -89,7 +89,7 @@ const Update = () => {
     ) {
       toast.warn("Fill all the fields");
     } else {
-      fetch("/updateevent", {
+      fetch(`${API}/updateevent`, {
         method: "PUT",
         body: JSON.stringify({ ...event, eventid: uid }),
         headers: {

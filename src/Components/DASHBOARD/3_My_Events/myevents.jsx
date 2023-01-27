@@ -9,6 +9,7 @@ import Nodata from "../../../assets/nodata.json";
 import Lottie from "lottie-react";
 import { Link, Outlet } from "react-router-dom";
 // import error from "../../error-page/error";
+import {API} from "../../../config.js"
 const Myevents = () => {
   const { userInfo } = useSelector((state) => state.user);
   const id = userInfo?.userdata?.email;
@@ -18,7 +19,7 @@ const Myevents = () => {
   // var l;
   useEffect(() => {
     const fetchdata = async () => {
-      const response = await fetch(`/getmyevents/${id}`);
+      const response = await fetch(`${API}/getmyevents/${id}`);
       const data = await response.json();
       setmyevents(data);
       // l=myevents.eventdata.length
@@ -27,7 +28,7 @@ const Myevents = () => {
   }, [id, setmyevents, reload]);
 
   const deleteevent = async (eventname) => {
-    const resp = await fetch(`/deleteevent/${eventname}`);
+    const resp = await fetch(`${API}/deleteevent/${eventname}`);
     const res = await resp.json();
     if (res.status_code === 200) {
       setreload(!reload);
@@ -64,7 +65,7 @@ const Myevents = () => {
                       <div className="featureimg1">
                         <div className="featureimg">
                           <img
-                            src={`https://eventobackend.onrender.com/getimage/${img}`}
+                            src={`${API}/getimage/${img}`}
                             alt="img"
                           />
                         </div>

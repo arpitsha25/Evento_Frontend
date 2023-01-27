@@ -12,7 +12,7 @@ const Participated = () => {
 
   useEffect(() => {
     userInfo?.userdata?.participated?.map((e, index) => {
-      fetch(`/getidevent/${userInfo?.userdata?.participated[index]?.eventid}`)
+      fetch(`${API}/getidevent/${userInfo?.userdata?.participated[index]?.eventid}`)
         .then((response) => response.json())
         .then((data) => setideventofid((prev) => [...prev, data]));
     });

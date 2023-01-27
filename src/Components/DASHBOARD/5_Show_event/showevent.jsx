@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import { ImLocation2 } from 'react-icons/im';
 import { useNavigate } from "react-router-dom";
 import { getuser } from "../../../Redux/Actions/userAction";
+import { API } from "../../../config";
 
 const Showevent = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Showevent = () => {
   );
   useEffect(() => {
     const fetchidevent = async () => {
-      const response = await fetch(`/getidevent/${id}`);
+      const response = await fetch(`${API}/getidevent/${id}`);
       const data = await response.json();
       setidevent(data);
     };
@@ -35,7 +36,7 @@ const Showevent = () => {
   }, [id, setidevent]);
 
   const handleattend = () => {
-    fetch("/participate", {
+    fetch(`${API}/participate`, {
       method: "POST",
       body: JSON.stringify({
         email: userInfo?.userdata?.email,
@@ -89,7 +90,7 @@ const Showevent = () => {
                 <>
                   <SwiperSlide className="sldimg">
                     <img
-                      src={`https://eventobackend.onrender.com/getimage/${idevent?.eventdata[0]?.imagesID[index]}`}
+                      src={`${API}/getimage/${idevent?.eventdata[0]?.imagesID[index]}`}
                       alt="img"
                     />
                   </SwiperSlide>

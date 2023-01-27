@@ -13,7 +13,7 @@ export const hostEvent = createAsyncThunk(
       };
       // console.log("Calling api")
       // console.log(formData);
-      const response = await axios.post("/hostevent", formData, config);
+      const response = await axios.post(`${API}/hostevent`, formData, config);
       // console.log(response)
       return response.data.message;
     } catch (error) {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { API } from "../../config";
 
 // register user action for Signup
 export const registerUser = createAsyncThunk(
@@ -14,7 +15,7 @@ export const registerUser = createAsyncThunk(
           "Content-Type": "application/json",
         },
       };
-      const response = await axios.post("/register", { ...formdata }, config);
+      const response = await axios.post(`${API}/register`, { ...formdata }, config);
       return response.data.message;
     } catch (error) {
       // return custom error message from API if any
@@ -38,7 +39,7 @@ export const userLogin = createAsyncThunk(
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.post("/login", { email, password }, config);
+      const { data } = await axios.post(`${API}/login`, { email, password }, config);
       // store user's token in local storage
       // localStorage.setItem("userToken", data.userToken);
       localStorage.setItem('userToken', data.userToken)
@@ -70,7 +71,7 @@ export const getuser = createAsyncThunk(
           Authorization: `Bearer ${user.userToken}`,
         },
       }
-      const { data } = await axios.get(`/getuser`, config)
+      const { data } = await axios.get(`${API}/getuser`, config)
       // console.log(data)
       return data
     } catch (error) {

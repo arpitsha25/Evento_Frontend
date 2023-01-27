@@ -5,6 +5,7 @@ import { getAllEvents } from "../../../Redux/Actions/eventAction";
 import { useEffect } from "react";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, Outlet } from "react-router-dom";
+import { API } from "../../../config";
 // import { useNavigate } from "react-router-dom";
 // import ObjectID from "bson-objectid";
 // import Image from "../../../assets/P3.jpg"
@@ -45,7 +46,7 @@ const Allevents = () => {
                     <div className="allfeatureimg1">
                       <div className="allfeatureimg">
                         <img
-                          src={`https://eventobackend.onrender.com/getimage/${img}`}
+                          src={`${API}/getimage/${img}`}
                           alt="img"
                           // loading="lazy"
                         />

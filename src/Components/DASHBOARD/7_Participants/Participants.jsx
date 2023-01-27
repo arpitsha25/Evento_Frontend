@@ -5,6 +5,7 @@ import { FaDownload } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
+import {API} from "../../../config.js"
 // import { getAllEvents } from "../../../Redux/Actions/eventAction";
 const Participants = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const Participants = () => {
 
   useEffect(() => {
     const fetchidevent = async () => {
-      const response = await fetch(`/getidevent/${id}`);
+      const response = await fetch(`${API}/getidevent/${id}`);
       const data = await response.json();
       setidevent(data);
     };
@@ -24,7 +25,7 @@ const Participants = () => {
 
   useEffect(() => {
     idevent?.eventdata[0].participants?.map((e, index) => {
-      fetch(`/getiduser/${idevent?.eventdata[0]?.participants[index]?.email}`)
+      fetch(`${API}/getiduser/${idevent?.eventdata[0]?.participants[index]?.email}`)
         .then((response) => response.json())
         .then((data) => setattendees((prev) => [...prev, data]));
     });

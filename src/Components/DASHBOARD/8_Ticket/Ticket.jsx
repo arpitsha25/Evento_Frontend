@@ -18,7 +18,7 @@ const Ticket = () => {
 
   useEffect(() => {
     const fetchtktdata = async () => {
-      const response = await fetch(`/getidevent/${eid}`);
+      const response = await fetch(`${API}/getidevent/${eid}`);
       const data = await response.json();
       settktdata(data);
     };

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API } from "../../../config";
 export const hostEvent = createAsyncThunk(
   "/hostevent",
   async (formData, { rejectWithValue }) => {
@@ -29,7 +30,7 @@ export const getAllEvents = createAsyncThunk("/getallevents", async () => {
 
   try {
     // console.log("hello");
-    const response = await axios.get("/getallevents");
+    const response = await axios.get(`${API}/getallevents`);
     // console.log("hello");
     // console.log(response);
     return response.data

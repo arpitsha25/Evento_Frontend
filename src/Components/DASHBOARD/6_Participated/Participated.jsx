@@ -5,6 +5,7 @@ import "./Participated.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
+import {API} from "../../../config.js"
 
 const Participated = () => {
   const [eventofid, setideventofid] = useState([]);

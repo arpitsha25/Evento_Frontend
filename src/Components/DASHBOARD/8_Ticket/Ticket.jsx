@@ -9,6 +9,7 @@ import TT from "../../../assets/tt.png";
 import Lgo from "../../../assets/evento_c.png";
 import Loader from "../../loader/loader";
 import { useSelector } from "react-redux";
+import {API} from "../../../config.js"
 
 const Ticket = () => {
   const { userInfo } = useSelector((state) => state.user);

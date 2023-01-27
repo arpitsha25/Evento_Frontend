@@ -61,7 +61,7 @@ const Getevents = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="eventswiper"
       >
-        {eventdetails?.eventdata.map((e, index) => {
+        {eventdetails?.eventdata?.map((e, index) => {
           if (index < 10) {
             return (
               <SwiperSlide className="eventslide">

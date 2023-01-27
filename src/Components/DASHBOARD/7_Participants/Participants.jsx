@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import "./Participants.css";
 import { FaDownload } from "react-icons/fa";
 import { useParams } from "react-router-dom";
@@ -23,7 +23,7 @@ const Participants = () => {
   }, [id, setidevent]);
 
   useEffect(() => {
-    idevent?.eventdata[0].participants.map((e, index) => {
+    idevent?.eventdata[0].participants?.map((e, index) => {
       fetch(`/getiduser/${idevent?.eventdata[0]?.participants[index]?.email}`)
         .then((response) => response.json())
         .then((data) => setattendees((prev) => [...prev, data]));

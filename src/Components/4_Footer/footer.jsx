@@ -1,13 +1,16 @@
 import React from "react";
 import "../../Components/4_Footer/footer.css";
 import logo from "../../assets/evento_c.png";
+import { Link, Outlet } from "react-router-dom";
 import {
   AiFillInstagram,
   AiFillFacebook,
   AiFillYoutube,
   AiFillLinkedin,
+  AiFillTwitterCircle,
 } from "react-icons/ai";
-const footer = () => {
+const Footer = () => {
+
   return (
     <>
       <div className="footer">
@@ -16,16 +19,24 @@ const footer = () => {
             <h2>MENU</h2>
           </div>
           <div className="menu-content f-1-2">
-            <a href=" "><h1>Testimonials</h1></a>
+            <Link to={`/`}>
+              <h1>Home</h1>
+            </Link>
           </div>
           <div className="menu-content f-1-3">
-          <a href=" "><h1>About us</h1></a>
+            <Link to={`/testimonials`}>
+              <h1>Testimonials</h1>
+            </Link>
           </div>
           <div className="menu-content f-1-4">
-          <a href=" "><h1>Services</h1></a>
+            <Link to={`/services`}>
+              <h1>Services</h1>
+            </Link>
           </div>
           <div className="menu-content f-1-4">
-          <a href=" "><h1>Contact us</h1></a>
+            <Link to={`/contact`}>
+              <h1>Contact Us</h1>
+            </Link>
           </div>
         </div>
         <div className="foot footer-2">
@@ -34,10 +45,20 @@ const footer = () => {
           </div>
           <div className="icc">
             <div className="icc-con">
-              <AiFillInstagram className="icn" />
-              <AiFillFacebook className="icn" />
-              <AiFillYoutube className="icn" />
-              <AiFillLinkedin className="icn" />
+              <a href="https://instagram.com/iem.arpit?igshid=ZmZhODViOGI=">
+                <AiFillInstagram className="icn" />
+              </a>
+              <a href="https://www.youtube.com/@imarpit8248">
+                <AiFillYoutube className="icn" />
+              </a>
+              <a href="https://www.linkedin.com/in/arpit25">
+                <AiFillLinkedin className="icn" />
+              </a>
+
+              <a href="https://twitter.com/mr_arpit_25?s=08">
+                <AiFillTwitterCircle className="icn" />
+              </a>
+
             </div>
           </div>
         </div>
@@ -63,4 +84,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

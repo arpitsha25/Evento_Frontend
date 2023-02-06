@@ -53,7 +53,7 @@ const testimonials = () => {
           <Format
             image={image2}
             name="Arpit Sharma"
-            work="Student"
+            work="Developer"
             comment="A promising and reliable platform for event hosting and managing smooth rollout of entry passes. Very much impressed with the cutomer support"
           />
         </SwiperSlide>
@@ -61,7 +61,7 @@ const testimonials = () => {
           <Format
             image={image3}
             name="Yatendra Sharma"
-            work="Mistri"
+            work="Developer"
             comment="A promising and reliable platform for event hosting and managing smooth rollout of entry passes. Very much impressed with the cutomer support"
           />
         </SwiperSlide>
